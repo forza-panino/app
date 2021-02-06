@@ -148,7 +148,7 @@
         app:layout_constraintBottom_toTopOf="@id/first_row_bottom"
         android:background="@drawable/velocity_button"
         android:layout_marginRight="5dip"
-        android:text="->"/>
+        android:text="SR"/>
     <!--turn left-->
     <Button
         android:id="@+id/TURN_L"
@@ -158,7 +158,7 @@
         app:layout_constraintTop_toTopOf="@id/TURN_R"
         android:background="@drawable/velocity_button"
         android:layout_marginRight="5dip"
-        android:text="-"/>
+        android:text="SL"/>
     <!--claw open-->
     <Button
         android:id="@+id/CLAW_OPEN"
@@ -168,7 +168,7 @@
         app:layout_constraintTop_toBottomOf="@id/second_row_top"
         android:background="@drawable/velocity_button"
         android:enabled="false"
-        android:text="C"/>
+        android:text="GL"/>
     <!--claw close-->
     <Button
         android:id="@+id/CLAW_CLOSE"
@@ -178,7 +178,7 @@
         app:layout_constraintTop_toTopOf="@id/CLAW_OPEN"
         android:background="@drawable/velocity_button"
         android:enabled="false"
-        android:text="c"/>
+        android:text="GR"/>
 
     <!--forward-->
     <Button
@@ -189,7 +189,7 @@
         app:layout_constraintBottom_toTopOf="@id/first_row_bottom"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="5dip"
-        android:text="F"/>
+        android:text="TR"/>
     <!--backward-->
     <Button
         android:layout_width="60dip"
@@ -199,7 +199,7 @@
         app:layout_constraintLeft_toRightOf="@id/FORWARD"
         app:layout_constraintBottom_toBottomOf="@id/FORWARD"
         android:layout_marginLeft="5dip"
-        android:text="B"/>
+        android:text="TL"/>
     <!--lift up-->
     <Button
         android:layout_width="60dip"
@@ -208,7 +208,7 @@
         android:background="@drawable/velocity_button"
         app:layout_constraintLeft_toLeftOf="@id/FORWARD"
         app:layout_constraintTop_toBottomOf="@id/second_row_top"
-        android:text="LU"
+        android:text="WR"
         android:enabled="false"/>
     <!--lift down-->
     <Button
@@ -218,7 +218,7 @@
         android:background="@drawable/velocity_button"
         app:layout_constraintTop_toTopOf="@id/LIFT_UP"
         app:layout_constraintLeft_toLeftOf="@id/BACKWARD"
-        android:text="LD"
+        android:text="WL"
         android:enabled="false"/>
 
     <!--camera view-->
