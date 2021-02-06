@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimary">
+
+    <!--status bar-->
+    <TextView
+        android:id="@+id/status_bar"
+        android:layout_width="300dip"
+        android:layout_height="30dip"
+        android:text="Receiver status: NOT CONNECTED"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="14sp"
+        android:background="@drawable/status_bar"
+        android:textAlignment="center"
+        android:paddingBottom="5dip"
+        android:paddingTop="3dip"
+        android:paddingRight="4dip"
+        android:paddingLeft="4dip"
+        android:textColor="@color/not_connected"
+        android:textStyle="bold"
+        />
+
+    <!---->
+
+    <!--connect-->
+    <Button
+        android:id="@+id/connect_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/velocity_button"
+        android:text="CONNECT"
+        android:textColor="@color/connected"
+        android:onClick="connectClickedHandler"/>
+
+    <!---->
+
+    <!--velocity buttons-->
+    <!--velocity 1-->
+    <Button
+        android:id="@+id/vel1"
+        android:layout_width="100dip"
+        android:layout_height="30dip"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/vel2"
+        android:text="LOW"
+        android:background="@drawable/velocity_button"
+        android:onClick="velocitySetter"/>
+
+    <!--velocity 2-->
+    <Button
+        android:id="@+id/vel2"
+        android:layout_width="100dip"
+        android:layout_height="30dip"
+        app:layout_constraintLeft_toRightOf="@id/vel1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/vel3"
+        android:text="NORMAL"
+        android:background="@drawable/velocity_button"
+        android:enabled="false"
+        android:onClick="velocitySetter"/>
+
+    <!--velocity 3-->
+    <Button
+        android:id="@+id/vel3"
+        android:layout_width="100dip"
+        android:layout_height="30dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/vel2"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="MAX"
+        android:background="@drawable/velocity_button"
+        android:onClick="velocitySetter"/>
+
+    <!---->
+
+    <!--arm/car selector-->
+    <!--switch-->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:switchMinWidth="100dip"
+        app:thumbTint="@color/buttonbg"
+        app:trackTint="@color/toggletrack"
+        app:layout_constraintLeft_toLeftOf="@id/car"
+        app:layout_constraintRight_toRightOf="@id/arm"
+        app:layout_constraintBottom_toTopOf="@id/vel2"
+        android:layout_marginBottom="15dip"
+        android:checked="false"
+        android:onClick="machineSelector" />
+    <!--text1-->
+    <TextView
+        android:id="@+id/car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/vel1"
+        app:layout_constraintRight_toLeftOf="@id/toggle"
+        app:layout_constraintBottom_toBottomOf="@id/toggle"
+        android:layout_marginBottom="5dip"
+        android:text="CAR"
+        android:textColor="@color/selected_textcolor"/>
+    <!--text2-->
+    <TextView
+        android:id="@+id/arm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/vel3"
+        app:layout_constraintLeft_toRightOf="@id/toggle"
+        app:layout_constraintBottom_toBottomOf="@id/toggle"
+        android:layout_marginBottom="5dip"
+        android:text="ARM"
+        android:textColor="@color/notselected_textcolor"/>
+
+    <!---->
+
+    <!--car buttons-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/first_row_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/second_row_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52"/>
+
+    <!--turn right-->
+    <Button
+        android:id="@+id/TURN_R"
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/first_row_bottom"
+        android:background="@drawable/velocity_button"
+        android:layout_marginRight="5dip"
+        android:text="->"/>
+    <!--turn left-->
+    <Button
+        android:id="@+id/TURN_L"
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        app:layout_constraintRight_toLeftOf="@id/TURN_R"
+        app:layout_constraintTop_toTopOf="@id/TURN_R"
+        android:background="@drawable/velocity_button"
+        android:layout_marginRight="5dip"
+        android:text="-"/>
+    <!--claw open-->
+    <Button
+        android:id="@+id/CLAW_OPEN"
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        app:layout_constraintRight_toRightOf="@id/TURN_R"
+        app:layout_constraintTop_toBottomOf="@id/second_row_top"
+        android:background="@drawable/velocity_button"
+        android:enabled="false"
+        android:text="C"/>
+    <!--claw close-->
+    <Button
+        android:id="@+id/CLAW_CLOSE"
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        app:layout_constraintRight_toRightOf="@id/TURN_L"
+        app:layout_constraintTop_toTopOf="@id/CLAW_OPEN"
+        android:background="@drawable/velocity_button"
+        android:enabled="false"
+        android:text="c"/>
+
+    <!--forward-->
+    <Button
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        android:id="@+id/FORWARD"
+        android:background="@drawable/velocity_button"
+        app:layout_constraintBottom_toTopOf="@id/first_row_bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="5dip"
+        android:text="F"/>
+    <!--backward-->
+    <Button
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        android:id="@+id/BACKWARD"
+        android:background="@drawable/velocity_button"
+        app:layout_constraintLeft_toRightOf="@id/FORWARD"
+        app:layout_constraintBottom_toBottomOf="@id/FORWARD"
+        android:layout_marginLeft="5dip"
+        android:text="B"/>
+    <!--lift up-->
+    <Button
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        android:id="@+id/LIFT_UP"
+        android:background="@drawable/velocity_button"
+        app:layout_constraintLeft_toLeftOf="@id/FORWARD"
+        app:layout_constraintTop_toBottomOf="@id/second_row_top"
+        android:text="LU"
+        android:enabled="false"/>
+    <!--lift down-->
+    <Button
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        android:id="@+id/LIFT_DOWN"
+        android:background="@drawable/velocity_button"
+        app:layout_constraintTop_toTopOf="@id/LIFT_UP"
+        app:layout_constraintLeft_toLeftOf="@id/BACKWARD"
+        android:text="LD"
+        android:enabled="false"/>
+
+    <!--camera view-->
+    <WebView
+        android:layout_width="360dp"
+        android:layout_height="240dp"
+        android:id="@+id/camera_display"
+        app:layout_constraintLeft_toRightOf="@id/BACKWARD"
+        app:layout_constraintRight_toLeftOf="@id/TURN_L"
+        app:layout_constraintTop_toBottomOf="@id/status_bar"
+        app:layout_constraintBottom_toTopOf="@id/toggle"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

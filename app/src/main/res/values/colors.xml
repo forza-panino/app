@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#09A0D7</color>
+    <color name="colorPrimaryDark">#72A1E5</color>
+    <color name="colorAccent">#7D544F</color>
+    <color name="buttonbg">#C6C5B9</color>
+    <color name="borders">#044962</color>
+    <color name="buttonborder">#706E5C</color>
+    <color name="buttonpressedbg">#87846E</color>
+    <color name="buttondisabledbg">#C9C6C5B9</color>
+    <color name="toggletrack">#BB7D544F</color>
+    <color name="notselected_textcolor">#44000000</color>
+    <color name="selected_textcolor">#B6000000</color>
+    <color name="connected">#42DD00</color>
+    <color name="not_connected">#a20a0a</color>
+</resources>
